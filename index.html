@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>김민주의 포트폴리오</title>
+
+  <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/gallery.css">
+</head>
+
+<script>
+history.scrollRestoration = "manual";
+
+window.addEventListener("load", () => {
+
+    // URL의 #home 제거
+    if (location.hash) {
+        history.replaceState(
+            null,
+            null,
+            window.location.pathname
+        );
+    }
+
+    window.scrollTo(0, 0);
+});
+</script>
+
+<script>
+window.addEventListener('load', () => {
+
+    const intro = document.getElementById('intro');
+
+    setTimeout(() => {
+    document.body.classList.remove('loading');
+    intro.remove();
+}, 4000);
+
+});
+</script>
+
+<div id="modal" class="modal" aria-hidden="true">
+  <button type="button" id="modalClose" class="modal-close">×</button>
+
+  <div class="modal-content">
+    <img id="modalImage" src="" alt="">
+
+    <div class="modal-text">
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+    </div>
+  </div>
+</div>
+
+<body class="loading">
+
+  <div id="intro">
+    <img src="images/open.png"
+     alt="오프닝"
+     class="intro-img"
+     loading="eager">
+  </div>
+
+  <div id="main"></div>
+
+  <header class="header">
+    <div class="logo">
+      <span>PORTFOLIO</span>
+    </div>
+
+    <nav class="nav">
+      <a href="#home">HOME</a>
+      <a href="#about">ABOUT</a>
+      <a href="#skills">SKILLS</a>
+      <a href="#activities">PROJECTS</a>
+      <a href="#gallery">GALLERY</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-overlay">
+      <div class="hero-text">
+        <h1>김민주</h1>
+        <p class="role">디자이너</p>
+        <p class="copy">시각디자인을 중심으로</br>다양한 작업을 하고 있습니다.</p>
+        <a href="#about" class="btn">자세히 보기</a>
+      </div>
+
+      <div class="hero-points">
+        <div>
+          <strong>학력</strong>
+          <span>신라대학교 시각디자인학과 재학</span>
+        </div>
+        <div>
+          <strong>대표 작업</strong>
+          <span>'쇼르모트' 초콜릿 브랜드 디자인</span>
+        </div>
+        <div>
+          <strong>주요 사용 툴</strong>
+          <span>• &nbsp;Adobe Illustrator<br>• &nbsp;Clip Studio Paint</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section about">
+    <div class="section-inner about-grid">
+      <div>
+        <p class="eyebrow">ABOUT ME</p>
+        <h2>소개합니다</h2>
+        <p>
+          현재 신라대학교에서 <span style="color: #007f58; font-weight: 700;">시각디자인</span>을 전공하고 있습니다.
+        </p>
+        <p>
+          일러스트레이션, 애니메이션, 게임 개발 등 다양한 분야를 탐구하며 창의적인 결과물을<br>만들어가고 있습니다.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <div><b>2025</b><span>신라대학교 시각디자인학과 입학</span></div>
+        <div><b>현재</b><span>'Snow Cake' 게임 개발 중</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="skills" class="section skills">
+    <div class="section-inner">
+      <h2>SKILLS</h2>
+      <div class="skill-grid">
+        <article>
+          <h3>WEB DESIGN</h3>
+          <p>HTML, CSS, JavaScript<br>반응형 웹 디자인</p>
+        </article>
+        <article>
+          <h3>GRAPHIC DESIGN</h3>
+          <p>Photoshop, Illustrator<br>시각 디자인</p>
+        </article>
+        <article>
+          <h3>ILLUSTRATION</h3>
+          <p>Clip Studio Paint<br>일러스트레이션</p>
+        </article>
+        <article>
+          <h3>ANIMATION</h3>
+          <p>Adobe Premiere Pro<br>애니메이션</p>
+        </article>
+        <article>
+          <h3>GAME DEVELOPMENT</h3>
+          <p>RPG Maker MV<br>게임 개발</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="activities" class="section dark activities">
+    <div class="section-inner">
+      <h2>PROJECTS</h2>
+      <p style="text-align: center; margin-bottom: 40px;">사진을 클릭해 보세요!</p>
+      <div class="card-grid">
+        <article class="image-card" data-project="brand">
+          <img src="images/activity1.png" alt="브랜드 디자인">
+          <div>
+            <h3>브랜드 디자인</h3>
+            <p>초콜릿 브랜드 '쇼르모트'</p>
+          </div>
+        </article>
+        <article class="image-card" data-project="game">
+          <img src="images/activity2.png" alt="게임 개발">
+          <div>
+            <h3>게임</h3>
+            <p>'Snow Cake' 개발 중</p>
+          </div>
+        </article>
+        <article class="image-card" data-project="animation">
+          <img src="images/activity3.png" alt="애니메이션">
+          <div>
+            <h3>애니메이션</h3>
+            <p>부산교통공사와 협업하여 역사 및 열차 내 소지 금지<br>물품 안내를 위한 홍보 애니메이션 제작 중</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section gallery">
+  <div class="section-inner">
+
+    <h2>GALLERY</h2>
+
+    <div class="filter-buttons">
+      <button type="button" class="active" data-filter="all">전체</button>
+      <button type="button" data-filter="poster">포스터</button>
+      <button type="button" data-filter="illust">일러스트레이션</button>
+    </div>
+
+    <div id="galleryList" class="gallery-list"></div>
+
+  </div>
+</section>
+
+  <section id="contact" class="section contact">
+    <div class="section-inner">
+      <h2>CONTACT</h2>
+      <p>아래 연락처를 통해 문의해 주세요.</p>
+      <div class="contact-grid">
+        <div><b>Email</b><span>123pizzza987@naver.com</span></div>
+        <div><b>Phone</b><span>010-7445-0668</span></div>
+      </div>
+    </div>
+  </section>
+
+ <footer class="footer">
+  <p>© 2026 Kim Minju Portfolio. All Rights Reserved.</p>
+  <a href="#home">TOP</a>
+</footer>
+
+<div id="lightbox" class="lightbox">
+
+  <span class="close">&times;</span>
+
+  <button class="arrow prev">&#10094;</button>
+
+  <img id="lightbox-img" src="" alt="">
+
+  <button class="arrow next">&#10095;</button>
+
+</div>
+
+<script>
+
+const projectImages = {
+
+  brand:[
+    "images/brand1.png",
+    "images/brand2.png",
+    "images/brand3.png"
+  ],
+
+  game:[
+    "images/game1.png",
+    "images/game2.png",
+    "images/game3.png"
+  ],
+
+  animation:[
+    "images/ani1.png",
+    "images/ani4.png",
+    "images/ani5.png"
+  ]
+
+};
+
+let currentProject = [];
+let currentIndex = 0;
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+document.querySelectorAll(".image-card").forEach(card => {
+
+  card.addEventListener("click", () => {
+
+    const project = card.dataset.project;
+
+    currentProject = projectImages[project];
+
+    currentIndex = 0;
+
+    lightbox.style.display = "flex";
+
+    lightboxImg.src = currentProject[currentIndex];
+
+  });
+
+});
+
+function showImage(){
+
+  lightboxImg.src = currentProject[currentIndex];
+
+}
+
+document.querySelector(".next").addEventListener("click", () => {
+
+  currentIndex++;
+
+  if(currentIndex >= currentProject.length){
+    currentIndex = 0;
+  }
+
+  showImage();
+
+});
+
+document.querySelector(".prev").addEventListener("click", () => {
+
+  currentIndex--;
+
+  if(currentIndex < 0){
+    currentIndex = currentProject.length - 1;
+  }
+
+  showImage();
+
+});
+
+document.querySelector(".close").addEventListener("click", () => {
+
+  lightbox.style.display = "none";
+
+});
+
+lightbox.addEventListener("click", (e) => {
+
+  if(e.target === lightbox){
+    lightbox.style.display = "none";
+  }
+
+});
+
+document.addEventListener("keydown", (e) => {
+
+  if(e.key === "Escape"){
+    lightbox.style.display = "none";
+  }
+
+});
+
+</script>
+
+<script src="js/gallery-data.js"></script>
+<script src="js/gallery.js"></script>
+
+</body>
+</html>
